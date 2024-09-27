@@ -32,7 +32,9 @@ jobs:
                 uses: actions/checkout@v4.2.0
             
             -   name: Setup Node.js environment # mejor opcion para instalar node 
-                uses: actions/setup-node@v4.0.4    
+                uses: actions/setup-node@v4.0.4
+                with:
+                    node-version: latest    
                 
             -   name: node-version
                 run: node --version
@@ -46,6 +48,8 @@ jobs:
                     cat hola.txt
                     chmod +x script.sh
                     ./script.sh 
+
+            
                     
 
 
