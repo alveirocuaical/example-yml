@@ -29,7 +29,13 @@ jobs:
         needs: [hola] # lo hace dependiente del anterior job
         steps:
             -   name: Checkout # 
-                uses: actions/checkout@v4.2.0            
+                uses: actions/checkout@v4.2.0
+            
+            -   name: Setup Node.js environment # mejor opcion para instalar node 
+                uses: actions/setup-node@v4.0.4    
+                
+            -   name: node-version
+                run: node --version
 
             -   name: touch-file
                 run: touch hola.txt
