@@ -35,11 +35,11 @@ jobs:
                 run: touch hola.txt
 
             -   name: LS
-                run: | # multilinea para instalar paquetes apt-get install  
+                run: | # multilinea para instalar paquetes apt-get install  curl
                     echo "hola mundo"
                     cat hola.txt
                     chmod +x script.sh
-                    ./
+                    ./script.hs 
 
 
 # haciendo push  a master 
