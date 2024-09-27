@@ -4,8 +4,8 @@ on: [push]
 
 jobs:
     hola:
-        runs-on : ubuntu-latest
+        runs-on: ubuntu-latest
 
-        steps:  
-            - name: hola
-            - run : echo "Hola mundo"
+        steps:
+            -   name: hola
+                run: echo "Hola mundo"
