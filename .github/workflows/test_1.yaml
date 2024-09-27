@@ -1,6 +1,14 @@
 name: Hola mundo
 
-on: [push]
+on: #[push] #push, pull_request mas usado - 
+    push: 
+        branches:
+            -   main
+
+    pull_request:
+        branches:
+            -   main
+
 
 jobs:
     hola: #job se ejecuta dentro de ubuntu actual
