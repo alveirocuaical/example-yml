@@ -39,7 +39,7 @@ jobs:
                     echo "hola mundo"
                     cat hola.txt
                     chmod +x script.sh
-                    ./script.hs 
+                    ./script.sh 
 
 
 # haciendo push  a master 
