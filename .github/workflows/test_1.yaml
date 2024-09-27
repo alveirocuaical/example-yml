@@ -11,7 +11,7 @@ jobs:
                 run: echo "Hola mundo"
 
             -   name: touch-file
-                run: rouch hola.txt
+                run: touch hola.txt
 
             -   name: set-text
                 run: echo "hola Mundo" >> hola.txt
