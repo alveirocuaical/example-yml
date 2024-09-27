@@ -3,9 +3,16 @@ name: Hola mundo
 on: [push]
 
 jobs:
-    hola:
+    hola: #job se ejecuta dentro de ubuntu actual
         runs-on: ubuntu-latest
 
         steps:
-            -   name: hola
+            -   name: hola-step
                 run: echo "Hola mundo"
+
+    other: 
+        runs-on: ubuntu-latest 
+
+        steps:
+            -   name: LS
+                run: ls -al
