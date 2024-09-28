@@ -47,8 +47,15 @@ jobs:
                     echo "hola mundo"
                     cat hola.txt
                     chmod +x script.sh
-                    ./script.sh 
-
+                    ./script.sh
+                    
+            -   name: PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: '8.3'
+            
+            -   name: php-version
+                run : php --version
             
                     
 
