@@ -36,8 +36,12 @@ jobs:
     #      - 6379:6379
     
     steps:
+      
+
       - name: Test install mysql
-        run:  echo " Valor =  $MY_VAR"
+        env:
+          STEP_MY_VAR: Nivel step
+        run:  echo " Valor =  $MY_VAR, var step scope = $STEP_MY_VAR"
 
   #hola: #job se ejecuta dentro de ubuntu actual
   #  runs-on: ubuntu-latest
