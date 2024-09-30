@@ -12,7 +12,7 @@ on: #[push] #push, pull_request mas usado -
 jobs:
 
   # ---- Instalacion de servicio MySQL 
-  service-mysql:
+  service-mysql: #nombre del job 
     runs-on: ubuntu-latest
 
     services:
@@ -22,6 +22,11 @@ jobs:
           MYSQL_ROOT_PASSWORD: example
         ports:
           - 3306:3306
+
+      redis:
+        image: redis 
+        ports:
+          - 6379:6379
     
     steps:
       - name: Test install mysql
