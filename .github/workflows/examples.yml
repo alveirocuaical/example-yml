@@ -43,6 +43,9 @@ jobs:
           STEP_MY_VAR: Nivel step
         run:  echo " Valor =  $MY_VAR, var step scope = $STEP_MY_VAR"
 
+      - name: Variable GitHub
+          run: echo " Variable GitHub ${{ vars.MY_VAR_REPO }}"
+
   #hola: #job se ejecuta dentro de ubuntu actual
   #  runs-on: ubuntu-latest
 
