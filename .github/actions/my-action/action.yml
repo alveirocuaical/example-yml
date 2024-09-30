@@ -1,0 +1,11 @@
+name: "My action"
+description: "Test my action"
+
+runs:
+  using: "composite" # agrupa pasos comunes para usar en diferentes workflows
+
+  steps:
+    - name: "Hello world action"
+      run: |
+        echo "Hello world"        
+      shell: bash
