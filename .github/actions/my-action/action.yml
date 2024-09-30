@@ -1,6 +1,12 @@
 name: "My action"
 description: "Test my action"
 
+inputs:
+  message:
+    description: "Message to print"
+    required: true
+    default: "Hello world input"
+
 runs:
   using: "composite" # agrupa pasos comunes para usar en diferentes workflows
 
@@ -9,3 +15,10 @@ runs:
       run: |
         echo "Hello world action"        
       shell: bash #tienen que llevar la directiva para poder ejecutar 
+
+    - name: Inputs 
+      run: echo "Hola ${{ inputs.message }}"
+      shell: bash
+
+    
+

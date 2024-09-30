@@ -32,6 +32,8 @@ jobs:
 
       - name: ls
         uses: ./.github/actions/my-action # llamar a una action para resuarla 
+        with: 
+          message: "Parametro pasado al action" #paso de parametros al action 
 
       #-   name: Setup Node.js environment # mejor opcion para instalar node
       #    uses: actions/setup-node@v4.0.4
