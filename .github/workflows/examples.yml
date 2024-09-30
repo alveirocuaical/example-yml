@@ -10,30 +10,43 @@ on: #[push] #push, pull_request mas usado -
       - master
 
 jobs:
-  hola: #job se ejecuta dentro de ubuntu actual
+
+  # ---- Instalacion de servicio MySQL 
+  service-mysql:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: hola-step
-        run: echo "Hola mundo"
+    services:
+      mysql: 
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: example
+        ports:
+          - 3306:3306
 
-      - name: touch-file
-        run: touch hola.txt
+  #hola: #job se ejecuta dentro de ubuntu actual
+  #  runs-on: ubuntu-latest
 
-      - name: set-text
-        run: echo "hola Mundo" >> hola.txt
+    #steps:
+    #  - name: hola-step
+    #    run: echo "Hola mundo"
 
-  other:
-    runs-on: ubuntu-latest
-    needs: [hola] # lo hace dependiente del anterior job
-    steps:
-      - name: Checkout #
-        uses: actions/checkout@v4.2.0
+    #  - name: touch-file
+    #    run: touch hola.txt
 
-      - name: ls
-        uses: ./.github/actions/my-action # llamar a una action para resuarla 
-        with: 
-          message: "Parametro pasado al action" #paso de parametros al action 
+    #  - name: set-text
+    #    run: echo "hola Mundo" >> hola.txt
+
+  #other:
+  #  runs-on: ubuntu-latest
+  #  needs: [hola] # lo hace dependiente del anterior job
+  #  steps:
+  #   - name: Checkout #
+  #     uses: actions/checkout@v4.2.0
+
+  #   - name: ls
+  #     uses: ./.github/actions/my-action # llamar a una action para resuarla 
+  #     with: 
+  #       message: "Parametro pasado al action" #paso de parametros al action 
 
       #-   name: Setup Node.js environment # mejor opcion para instalar node
       #    uses: actions/setup-node@v4.0.4
@@ -61,3 +74,7 @@ jobs:
       #-   name: php-version
       #    run : php --version
 # haciendo push  a master 4
+
+
+
+        
