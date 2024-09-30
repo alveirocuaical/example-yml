@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # --- Variables de entorno 
-    env: 
+    env: #nivel Job
       MY_VAR: "My variable de entorno"
 
     
@@ -44,7 +44,10 @@ jobs:
         run:  echo " Valor =  $MY_VAR, var step scope = $STEP_MY_VAR"
 
       - name: Variable GitHub
-        run: echo " Variable GitHub ${{ vars.MY_VAR_REPO }}"
+        run: echo " Variable GitHub ${{ vars.MY_VAR_REPO }}" # se hace referencia con vars.
+
+      - name: Secret
+        run : echo "Secret = ${{ secrets.MY_SECRET }}"
 
   #hola: #job se ejecuta dentro de ubuntu actual
   #  runs-on: ubuntu-latest
